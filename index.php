@@ -428,7 +428,7 @@ die;
 
                 <div class="form_row acceptance">
                     <label for="fld4">
-                        <input type="checkbox" id='fld4' name='jf_chk_5' value="" required>
+                        <input type="checkbox" id='fld4' name='jf_chk_5' value="" >
                         <span>אני מסכים/ה לקבל חומרים פרסומיים במייל</span>
                     </label>
                     <div class="errors"></div>

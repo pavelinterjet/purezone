@@ -246,13 +246,12 @@ header.show_header {
  */
 
 
-
-.toggle_menu {
+ .toggle_menu {
     position: absolute;
     width: 50px;
     height: 50px;
     right: 0;
-    top: 0;
+    top: -12px;
     z-index: 9;
     padding: 5px 5px;
     box-sizing: border-box;
@@ -265,16 +264,14 @@ header.show_header {
     margin: 7px 0;
 }
 
-
 .mobile_m {
     position: absolute;
     right: 0px;
-    top: 50px;
+    top: 32px;
     background-color: #4592cf;
     color: white;
     display: none;
 }
-
 .is_mobile .mobile_m a {
     padding: 20px 40px;
     border-bottom: 1px solid #abd3f254;
