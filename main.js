@@ -70,20 +70,13 @@ jQuery(document).ready(function($){
                         dots: true,
                         autoplay: false,
                         autoplaySpeed: 2000,
+                        infinite: true,
+                        centerMode: true,
                         responsive: [
                             {
                             breakpoint: 768,
                                 settings: {
-                                    rtl: true,
-                                    slidesToShow: slideNum,
-                                }
-                            },
-                            {
-                            breakpoint: 550,
-                                settings: {
-                                    rtl: false,
-                                    slidesToShow: slideNum,
-                                    slidesToScroll: 1,
+                                    slidesToShow: 1,
                                 }
                             },
                         ]
