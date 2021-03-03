@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 .is_mobile {
     display: none;
 }
@@ -152,3 +153,159 @@
 
 
 }
+=======
+.is_mobile {
+    display: none;
+}
+
+.is_desktop {
+    display: block;
+}
+
+
+@media all and (max-width: 960px) {
+
+    .menu a {
+        font-size: 23px;
+        padding: 5px 20px;
+        font-size: 19px;
+    }
+    .big_text {
+        font-size: 65px;
+        line-height: 68px;
+    }
+    .middle_text {
+        font-size: 42px;
+        line-height: 60px;
+    }
+    .section_four .links a {
+        font-size: 26px;
+    }
+
+    .section_seven .left {
+        padding-right: 0;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .section_seven .right {
+        margin-left: auto;
+        margin-right: auto;
+        margin-bottom: 30px;
+    }
+
+    .contact_details {
+        text-align: center;
+        margin-top: 50px;
+    }
+    .contact_details a {
+        font-size: 30px;
+        line-height: 26px;
+    }
+
+    .section_six .title,
+    .section_six .text {
+        margin-bottom: 30px;
+    }
+
+    .decorimg.four {
+        width: 100%;
+    }
+    .decorimg.three {
+        width: 60%;
+    }
+
+
+}
+
+
+@media all and (max-width: 768px) {
+
+
+    .middle_text {
+        font-size: 32px;
+        line-height: 40px;
+    }
+
+    .is_mobile {
+        display: block;
+    }
+
+    .is_desktop {
+        display: none;
+    }
+
+    .mobile_flex_col-3
+    {
+        width: 100%;
+        padding: 0;
+    }
+
+    .mobile_flex_col-2 {
+        width: 50%;
+    }
+    .section_four .links a {
+        font-size: 21px;
+    }
+    .section_six .thumb{
+        margin-bottom: 30px;
+    }
+    .section_six .thumb img {
+        margin: 0 auto;
+    }
+    .mobile_flex_reverse_col {
+        flex-direction: column-reverse;
+    }
+    .section_one .thumb {
+        max-width: 200px;
+        margin: 0 auto;
+        margin-bottom: 30px;
+        position: absolute;
+        left: 10px;
+        width: 20%;
+        top: 50%;
+        margin-top: -190px;
+    }
+    .section_one {
+        padding: 75px 0 58px 0;
+    }
+    .section_two {
+        padding-top: 58px;
+        padding-bottom: 36px;
+    }
+    .big_text {
+        font-size: 55px;
+        line-height: 58px;
+    }
+    .section_one .title {
+        max-width: 60%;
+    }
+
+    .section_five {
+        padding-top: 30px;
+        padding-bottom: 30px;
+    }
+    .section_six {
+        padding-top: 30px;
+    }
+}
+
+
+
+@media all and (max-width: 520px) {
+
+    .big_text {
+        font-size: 45px;
+        line-height: 48px;
+    }
+
+    .section_one .thumb {
+        max-width: 90px;
+        width: 20%;
+        min-width: 90px;
+        margin-top: -248px;
+    }
+
+
+}
+>>>>>>> refs/remotes/purezone/master
