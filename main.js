@@ -1,19 +1,11 @@
 jQuery(document).ready(function($){
 
-
-
     var valid = true;
-
     // VALIDATION
-
     function validity( el ) {
         var name_val = el[0].value;
         var email_val = el[1].value;
         var phone_val = el[2].value;
-
-        
-        
-
         if(  $('input[name="'+el[0].name+'"]').val().length === 0 ){ 
             $('input[name="'+el[0].name+'"]').next().text('שדה ריק');
             valid = false;
@@ -44,15 +36,11 @@ jQuery(document).ready(function($){
             valid = true;
         }
     }
-
-
     $('.popup_wrapper .close').click(function() {
         $(this).parents('.popup_wrapper').fadeOut();
     })
-    
     $('.section_four .links a').click(function(e) {
         e.preventDefault();
-        
         var dataPop = $(this).attr('data-pop');
         $('.popup_wrapper').fadeIn();
         $.ajax({
@@ -63,35 +51,69 @@ jQuery(document).ready(function($){
 
                 $('.popup .content').html('');
                 $('.popup .content').html(data);
+                $('.slider').slick('unslick');
 
-                $('.car_dip').slick({
-                    rtl: true,
-                    slidesToShow: 1,
-                    slidesToScroll: 1,
-                    arrows: false,
-                    dots: true,
-                    autoplay: true,
-                    autoplaySpeed: 2000,
-                    responsive: [
-                        {
-                          breakpoint: 550,
-                          settings: {
-                            slidesToShow: 1,
-                            slidesToScroll: 1,
-                          }
-                        },
-                      ]
-                });
+                setTimeout(()=>{
+
+                    var slideNum;
+                    if( $('.car_dip .dip_item ').length == 1 ) {
+                        slideNum = 1;
+                    } else {
+                        slideNum = 3
+                    }
+
+                    $('.car_dip').slick({
+                        rtl: true,
+                        slidesToShow: slideNum,
+                        slidesToScroll: 1,
+                        arrows: false,
+                        dots: true,
+                        autoplay: false,
+                        autoplaySpeed: 2000,
+                        responsive: [
+                            {
+                            breakpoint: 768,
+                                settings: {
+                                    rtl: true,
+                                    slidesToShow: slideNum,
+                                }
+                            },
+                            {
+                            breakpoint: 550,
+                                settings: {
+                                    rtl: false,
+                                    slidesToShow: slideNum,
+                                    slidesToScroll: 1,
+                                }
+                            },
+                        ]
+                    });
+
+
+                }, 1000 )
+
+                $('.light_box').click(function() {
+                    $('.light_box').fadeOut();
+                    $('.popup_lightbox .content').html('');
+                })
+                $('.light_box .popup_lightbox').click(function (e) {
+                    e.stopPropagation();
+                })
+
+                $('.car_dip').on('click', '.slick-slide',function(params) {
+                    $('.popup_lightbox .content').html('');
+                    var img = $(this).find('img').clone();
+                    $('.popup_lightbox .content').html(img);
+                    $('.light_box').fadeIn();
+                })
+
             }
         });
-
     })
-
     function checkEmail(email) {
         var regex = /^([a-zA-Z0-9_.+-])+\@(([a-zA-Z0-9-])+\.)+([a-zA-Z0-9]{2,4})+$/;
         return regex.test(email);
     }
-
     function phonenumber(inputtxt)
     {
         var phoneno = /^\(?([0-9]{3})\)?[-. ]?([0-9]{3})[-. ]?([0-9]{4})$/;
@@ -101,7 +123,9 @@ jQuery(document).ready(function($){
             return false;
         }
     }
-    
+
+
+
 
     var lastScrollTop = 0;
     $(window).scroll(function(event){
@@ -122,20 +146,20 @@ jQuery(document).ready(function($){
 
 
 
-var vid = $('video');
-var vid_pos = $('.video').offset();
-$(window).scroll(function(event){
-   var st = $(this).scrollTop();
-    topElement = vid_pos.top - 500;
-    bottomElement = vid_pos.top + $('.video').outerHeight();
+// var vid = $('video');
+// var vid_pos = $('.video').offset();
+// $(window).scroll(function(event){
+//    var st = $(this).scrollTop();
+//     topElement = vid_pos.top - 500;
+//     bottomElement = vid_pos.top + $('.video').outerHeight();
 
-    if( st >=topElement && st<=bottomElement ) {
-        $(vid).trigger('play');
-    } else {
-        $(vid).trigger('pause');
-    }
+//     if( st >=topElement && st<=bottomElement ) {
+//         $(vid).trigger('play');
+//     } else {
+//         $(vid).trigger('pause');
+//     }
 
-});
+// });
 
 
 
@@ -203,52 +227,84 @@ $(window).scroll(function(event){
       });
     
 
-    $('form').submit(function(e){
-        e.preventDefault();
+    // $('form').submit(function(e){
+    //     e.preventDefault();
        
-        validity( $(this).serializeArray() );
-        if( valid == false ) {
-            return false;
-        }
+    //     validity( $(this).serializeArray() );
+    //     if( valid == false ) {
+    //         return false;
+    //     }
         
-        var myform = document.getElementById("form");
-        var fd = new FormData(myform );
+    //     var myform = document.getElementById("form");
+    //     var fd = new FormData(myform );
 
-        $.ajax({
-            type: 'POST',
-            processData: false,
-            contentType: false,
-            dataType: 'json',
-            url: '',
-            data: fd,
-            beforeSend: function (params) {
+    //     $.ajax({
+    //         type: 'POST',
+    //         processData: false,
+    //         contentType: false,
+    //         dataType: 'json',
+    //         url: '',
+    //         data: fd,
+    //         beforeSend: function (params) {
                 
-            },
-            success: function( data ) {
+    //         },
+    //         success: function( data ) {
 
-                var resp = JSON.parse( JSON.stringify(data) );
-                if( typeof resp.error != 'undefined' ) {
-                    var field_names = Object.keys(resp.error);
-                    $('input').next().text(' ');
-                    for (let index = 0; index < field_names.length; index++) {
+    //             var resp = JSON.parse( JSON.stringify(data) );
+    //             if( typeof resp.error != 'undefined' ) {
+    //                 var field_names = Object.keys(resp.error);
+    //                 $('input').next().text(' ');
+    //                 for (let index = 0; index < field_names.length; index++) {
 
-                        if( typeof resp.error[field_names[index]] != 'undefined' ) {
-                            $('input[name="'+field_names[index]+'"]').next().text(errors.error[field_names[index]]);
-                        } 
-                    }
-                } else if( resp.success ) {
-                    console.log('sent');
+    //                     if( typeof resp.error[field_names[index]] != 'undefined' ) {
+    //                         $('input[name="'+field_names[index]+'"]').next().text(errors.error[field_names[index]]);
+    //                     } 
+    //                 }
+    //             } else if( resp.success ) {
+    //                 console.log('sent');
 
-                    $('.thankyou').fadeIn();
-                    $('.thankyou .flex_container').html(resp.success);
-                } 
+    //                 $('.thankyou').fadeIn();
+    //                 $('.thankyou .flex_container').html(resp.success);
+    //             } 
 
 
 
-            }
-        });
+    //         }
+    //     });
         
-    })
+    // })
+
+
+
+
+    
+
+			$('#form').jetform({
+				token:'nZq6scKaNvcXdgjszIcN1kaHhbYDKjAAie0yPKyTVU4AiE0Aiv9VGKu0sH7fVqWhqEkRvUyhbApBpYRGmgPkZA==',
+				errorSelector: '.errors',
+				successSelector: '.form-success',
+				hideSuccessAfter: 3,
+				privacyMode: true,
+				template:{
+					custom_error: '{$field} בעל הודעה מותאמת'
+				},
+				onSuccess: function(args){
+					console.log('onSuccess', args);
+				},
+				onError: function(errors){
+					console.log('onError', errors);
+				},
+				onFail: function(error){
+					console.log('onFail', error);
+				},
+				spinner: {
+					active: true,
+					width: '30px',
+					height: '20px',
+					color: '#333'
+				}
+			});
+	
 
 
 })

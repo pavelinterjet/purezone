@@ -211,7 +211,7 @@ header.show_header {
 	position: relative;
 }
 
-.menu a::after {
+.menu a.contact_item::after {
 	content: '';
 	position: absolute;
 	width: 100%;
@@ -222,21 +222,28 @@ header.show_header {
 	right: 0;
 	top: 0;
 	z-index: -1;
-	opacity: 0;
+	opacity: 1;
 	-webkit-transition: all 0.2s linear;
 	-moz-transition: all 0.2s linear;
 	  -o-transition: all 0.2s linear;
 		 transition: all 0.2s linear;
 }
 
-.menu a:hover::after {
-	opacity: 1;
+.menu a.contact_item {
+    color: white;
 }
+.contact_item::after {
+    opacity: 1;
 
-.menu a:hover {
+}
+/* .menu a:hover::after {
+	opacity: 1;
+} */
+
+/* .menu a:hover {
 	color: white;
 }
-
+ */
 
 
 
@@ -354,7 +361,6 @@ header.show_header {
 .section_one .links a {
     text-decoration: none;
     color: inherit;
-    /* padding: 20px 30px; */
     border-radius: 50px;
     margin: 0px !important;
     display: block;
@@ -367,6 +373,8 @@ header.show_header {
 
 .section_one .links a:hover {
     border: 1px solid;
+    background-color: #17769D;
+    color: white;
 }
 
 .section_one .links a {
@@ -553,6 +561,16 @@ form input {
     padding: 0px 20px;
     color: #3f84c8;
 }
+.acceptance {
+    text-align: right;
+    margin-top: 10px;
+}
+.acceptance input {
+    width: 20px;
+    height: 20px;
+    display: inline-block;
+    vertical-align: middle;
+}
 ::placeholder {
     color: #1862ad8c;
 }
@@ -630,6 +648,17 @@ form .notice {
     display: block;
 }
 
+
+.dip_item {
+    padding: 10px 10px;
+    display: none;
+    max-width: 300px;
+}
+/* .dip_item */
+.dip_item img {
+}
+
+
 .credits {
     padding: 45px 0 50px 0;
 }
@@ -667,10 +696,6 @@ form .notice {
     outline: none;
 }
 
-
-
-
-
 .popup_wrapper {
     position: fixed;
     z-index: 999;
@@ -679,7 +704,28 @@ form .notice {
     top: 0;
     right: 0;
     display: none;
+    background-color: rgba(0,0,0,0.5);
+}
 
+.popup_wrapper .flex_container {
+    height: 100%;
+    justify-content: center;
+    align-items: center;
+}
+
+.light_box{
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    top: 0;
+    right: 0;
+    z-index: 1002;
+    background-color: rgba(0,0,0,0.8);
+    display: none;
+}
+
+.popup_lightbox img {
+    max-height: 780px;
 }
 
 
@@ -699,7 +745,7 @@ form .notice {
 .car_dip .slick-dots {
     margin-top: 30px;
 }
-.popup .close {
+.close {
     width: 40px;
     height: 40px;
     border-radius: 50%;
@@ -711,7 +757,7 @@ form .notice {
     cursor: pointer;
     background-color: #f5f9ff;
 }
-.popup .close span {
+.close span {
     width: 100%;
     height: 2px;
     background-color: #316284;
@@ -719,10 +765,10 @@ form .notice {
     right: 0;
     top: 50%;
 }
-.popup .close span:nth-of-type(1) {
+.close span:nth-of-type(1) {
     transform: rotate( 45deg );
 }
-.popup .close span:nth-of-type(2) {
+.close span:nth-of-type(2) {
     transform: rotate( -45deg );
 }
 .thankyou {

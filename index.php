@@ -115,8 +115,8 @@ die;
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title> מטבחים </title>
-    <!-- <link rel="icon" type="image/png"  href="fav.png"> -->
+    <title> פיור-זון - הגנה מקסימלית מחיידקים! </title>
+    <link rel="icon" type="image/png"  href="fav.png">
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Assistant:wght@200;300;400;500;600;700;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
@@ -126,9 +126,13 @@ die;
 <body>
 
 
+
+
 <header class="">
     <div class="container">
         <div class="flex_container flex__space_between flex__align_center">
+
+            
             <div class="menu">
                 <div class="is_desktop">
                     <ul class="flex_container flex__align_center">
@@ -136,15 +140,16 @@ die;
                         <li> <a href="#charachteristics"> מאפיינים </a> </li>
                         <li> <a href="#covid"> קורונה </a> </li>
                         <li> <a href="#lab"> בדיקות מעבדה </a> </li>
-                        <li> <a href="#contact"> צור קשר </a> </li>
+                        <li> <a href="#contact" class="contact_item"> צור קשר </a> </li>
                     </ul>
                 </div>
+
                 <div class="is_mobile">
                     <div class="toggle_menu">
                         <span></span>
                         <span></span>
                         <span></span>
-                    </div> 
+                    </div>
                     <ul class="mobile_m">
                         <li> <a href="#about"> עלינו </a> </li>
                         <li> <a href="#charachteristics"> מאפיינים </a> </li>
@@ -154,16 +159,21 @@ die;
                     </ul>
                 </div>
             </div>
+
+
             <div class="logo">
                 <img src="assets/img/PureZONE.png" alt="">
             </div>
         </div>
     </div>
 </header>
+
+
 <section class='section_one' id='about'>
 <div class="decorimg one"></div>
 <div class="decorimg two"></div> 
     <div class="flex_container container mobile_flex_reverse_col">
+
         <div class="flex_col-2 mobile_flex_col-3">
             <div class="contents">
                 <div class="small_text">
@@ -401,20 +411,29 @@ die;
             <form action="" id='form' novalidate="novalidate">
                 <legend> דברו איתנו! </legend>
                 <div class="form_row name">
-                    <input type="text" id='fld1' name='name' value="" placeholder="שם מלא" >
+                    <input type="text" id='fld1' name='jf_txt_1' value="" placeholder="שם מלא" required>
                     <div class="errors"></div>
                 </div>
                 <div class="form_row email">
-                    <input type="email" id='fld2' name='email' value="" placeholder="מייל" >
+                    <input type="email" id='fld2' name='jf_txt_3' value="" placeholder="מייל" required>
                     <div class="errors"></div>
                 </div>
                 <div class="form_row">
-                    <input type="tel" id='fld3' name='phone' value="" placeholder="טלפון" required="false">
+                    <input type="tel" id='fld3' name='jf_txt_4' value="" placeholder="טלפון" required>
                     <div class="errors"></div>
                 </div>
                 <div class="form_row submit">
                     <button type="submit" name='name' > שליחת הודעה </button>
                 </div>
+
+                <div class="form_row acceptance">
+                    <label for="fld4">
+                        <input type="checkbox" id='fld4' name='jf_chk_5' value="" required>
+                        <span>אני מסכים/ה לקבל חומרים פרסומיים במייל</span>
+                    </label>
+                    <div class="errors"></div>
+                </div>
+
                 <span class='notice'>
                     בלחיצה על הכפתור אתה מאשר את הסכמתך למדיניות הפרטיות
                 </span>
@@ -431,27 +450,46 @@ die;
 
 <section class="credits ">
 <div class="decorimg four"></div>
-    <div class="container">
+    <!-- <div class="container">
         <a href="https://www.interjet.co.il/"> <span> Design by Interjet 2021 </span> </a>
-    </div>
+    </div> -->
 </section>
 
 
 <div class="popup_wrapper">
-    <div class="popup">
-        <div class="close">
-            <span></span>
-            <span></span>
+    <div class="flex_container">
+        <div class="popup">
+            <div class="close">
+                <span></span>
+                <span></span>
+            </div>
+            <div class="content"></div>
         </div>
-        <div class="content">
+    </div>
+
+    <div class="light_box">
+        <div class="flex_container">
+            <div class="popup_lightbox">
+                <div class="close_box">
+                    <span></span>
+                    <span></span>
+                </div>
+                <div class="content"></div>
+            </div>
+            
         </div>
     </div>
 </div>
 
 
 <script src="jquery.js"></script>
-<script src="main.js"></script>
 <script src="assets/slick-1.8.1/slick/slick.min.js"></script>
+<script src="main.js"></script>
+<script src="jetform.min.js"></script>
+
+
 
 </body>
 </html>
+
+
