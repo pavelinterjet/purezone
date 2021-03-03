@@ -144,7 +144,7 @@ die;
                         <span></span>
                         <span></span>
                         <span></span>
-                    </div>
+                    </div> 
                     <ul class="mobile_m">
                         <li> <a href="#about"> עלינו </a> </li>
                         <li> <a href="#charachteristics"> מאפיינים </a> </li>
