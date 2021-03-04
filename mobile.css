@@ -97,6 +97,7 @@
     }
     .section_four .links a {
         font-size: 21px;
+        margin-bottom: 10px;
     }
     .section_six .thumb{
         margin-bottom: 30px;
@@ -119,6 +120,7 @@
         width: 20%;
         top: 50%;
         margin-top: -190px;
+        display: none;
     }
     .section_one {
         padding: 75px 0 58px 0;
@@ -133,8 +135,17 @@
     }
     .section_one .title {
         max-width: 60%;
+        margin-right: auto;
+        margin-left: auto;
+        text-align: center;
     }
-
+    .section_one .contents .small_text {
+        text-align: center;
+    }
+    .section_one .links {
+        margin-right: auto;
+        margin-left: auto;
+    }
     .section_five {
         padding-top: 30px;
         padding-bottom: 30px;
@@ -142,6 +153,17 @@
     .section_six {
         padding-top: 30px;
     }
+    section.section_three {
+        padding-bottom: 5px;
+        border-bottom: 1px solid #17769d45;
+    }
+    .section_four {
+        padding-top: 30px;
+    }
+    .section_seven .right .title {
+        text-align: center;
+    }
+    
 }
 
 

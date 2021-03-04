@@ -19,10 +19,7 @@ function test_input($data) {
   }
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
-
-
     $phone = preg_replace('/[^0-9]/', '', $_POST['phone']);
-
     if ( empty($_POST["email"]) ) {
         $errors['error']['email'] = 'שדה  ריק'; 
         $allowSend = false;
@@ -44,8 +41,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $name = test_input($_POST["name"]);
         $allowSend = true;
     }
-
-
     if ( empty($_POST["city"]) ) {
         $errors['error']['city'] = 'שדה ריק'; 
         $allowSend = false;
@@ -54,8 +49,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $city = test_input($_POST["city"]);
         $allowSend = true;
     }
-
-
     if ( !is_numeric($phone) ) {
         $errors['error']['phone'] = 'מספר טלפון ריק'; 
         $allowSend = false;
@@ -68,19 +61,13 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $phone = test_input($_POST["phone"]);
         $allowSend = true;
     }
-
-
     if ($allowSend) {
-
         $to = "pavel@interjet.co.il";
         $subject = "Purezone new message";
-        
         $message .= "<h1> PUREZONE.</h1>";
         $message .= "<span> שם: </span>" . $name . '<br/>';
         $message .= "<span> מייל: </span>" . $email . '<br/>';
         $message .= "<span> טלפון: </span>" . $phone . '<br/>';
-
-        
         $header = "From:serv@interjet.co.il \r\n";
         $header .= "MIME-Version: 1.0\r\n";
         $header .= "Content-type: text/html\r\n";
@@ -92,19 +79,15 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         }else {
            $resp['fail'] = "Message could not be sent..." ;
         }
-
     } else {
         // echo 'dissallow send';
     }
-
     if( !empty($errors) ) {
         echo json_encode($errors);
     }
-
     if( !empty($resp) ) {
         echo json_encode($resp);
     }
-
 die;
 }
 ?>
@@ -115,6 +98,11 @@ die;
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta property="og:title" content="פיור-זון - הגנה מקסימלית מחיידקים!">
+    <meta property="og:description" content="תיאור: יריעה שקופה וכמעט בלתי נראית העשויה מסיליקון גמיש המשולב בסיבי כסף שזורים ומוסתרים ומכילה חומרים אנטיבקטריאלים אשר מסוגלים להפוך כל משטח למקום סטרילי מחיידקים ב 99.9% בקלות ובמהירות!">
+    <meta property="og:image" content="assets/img/1858.png">
+    <meta property="og:url" content="">
+    <meta name="description" content="תיאור: יריעה שקופה וכמעט בלתי נראית העשויה מסיליקון גמיש המשולב בסיבי כסף שזורים ומוסתרים ומכילה חומרים אנטיבקטריאלים אשר מסוגלים להפוך כל משטח למקום סטרילי מחיידקים ב 99.9% בקלות ובמהירות!">
     <title> פיור-זון - הגנה מקסימלית מחיידקים! </title>
     <link rel="icon" type="image/png"  href="fav.png">
     <link rel="preconnect" href="https://fonts.gstatic.com">
@@ -124,7 +112,6 @@ die;
     <link rel="stylesheet" href="assets/slick-1.8.1/slick/slick.css">
 </head>
 <body>
-
 
 
 
@@ -346,10 +333,10 @@ die;
         <div class="flex_container ">
             <div class="links">
                 <ul>
-                    <li> <a href="#" data-pop='1'> <span> Some Clinic in London Placeholder </span> </a> </li>
-                    <li> <a href="#" data-pop='2'> <span> Some Clinic in one of Europe’s Captials  Placeholder  </span> </a> </li>
-                    <li> <a href="#" data-pop='3'> <span> Clinic in London Placeholder </span> </a> </li>
-                    <li> <a href="#" data-pop='4'> <span> Clinic in London Placeholder </span> </a> </li>
+                    <li> <a href="#" data-pop='1'> <span> מפרט טכני של חברת Hexis לבדיקות נגד חיידקים </span> </a> </li>
+                    <li> <a href="#" data-pop='2'> <span> בדיקת מעבדה לעמידות מפני וירוסים, כולל וירוס הקורונה  </span> </a> </li>
+                    <li> <a href="#" data-pop='3'> <span> מסמך רשמי של תיאור המוצר ע"י חברת Hexis </span> </a> </li>
+                    <li> <a href="#" data-pop='4'> <span> מפרט מקיף לבדיקות מעבדה לעמידות מפני וירוסים </span> </a> </li>
                 </ul>
             </div>
         </div>
@@ -422,10 +409,6 @@ die;
                     <input type="tel" id='fld3' name='jf_txt_4' value="" placeholder="טלפון" required>
                     <div class="errors"></div>
                 </div>
-                <div class="form_row submit">
-                    <button type="submit" name='name' > שליחת הודעה </button>
-                </div>
-
                 <div class="form_row acceptance">
                     <label for="fld4">
                         <input type="checkbox" id='fld4' name='jf_chk_5' value="" >
@@ -433,10 +416,15 @@ die;
                     </label>
                     <div class="errors"></div>
                 </div>
+                <div class="form_row submit">
+                    <button type="submit" name='name' > שליחת הודעה </button>
+                </div>
 
-                <span class='notice'>
+
+
+                <!-- <span class='notice'>
                     בלחיצה על הכפתור אתה מאשר את הסכמתך למדיניות הפרטיות
-                </span>
+                </span> -->
 
                 <div class="thankyou">
                     <div class="flex_container flex__align_center flex__center">

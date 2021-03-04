@@ -218,6 +218,7 @@ header.fixed {
     transition: transform 0.3s ease-in-out, -webkit-transform 0.3s ease-in-out;
     padding: 10px 0;
     background-color: #f5f9ff;
+    border-bottom: 1px solid rgb(63 133 200 / 27%);
 }
 
 header.show_header {
