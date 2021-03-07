@@ -112,21 +112,21 @@ jQuery(document).ready(function($){
 
 
 
-    var lastScrollTop = 0;
-    $(window).scroll(function(event){
-       var st = $(this).scrollTop();
-        if( st > ( $('header').outerHeight() ) ) {
-            $('header').addClass('fixed');
-        } else {
-            $('header').removeClass('fixed');
-        }
-       if (st > lastScrollTop && st > ( $('header').outerHeight() ) ){
-           $('header').addClass('show_header');
-       } else {
-          $('header').removeClass('show_header');
-       }
-       lastScrollTop = st;
-    });
+    // var lastScrollTop = 0;
+    // $(window).scroll(function(event){
+    //    var st = $(this).scrollTop();
+    //     if( st > ( $('header').outerHeight() ) ) {
+    //         $('header').addClass('fixed');
+    //     } else {
+    //         $('header').removeClass('fixed');
+    //     }
+    //    if (st > lastScrollTop && st > ( $('header').outerHeight() ) ){
+    //        $('header').addClass('show_header');
+    //    } else {
+    //       $('header').removeClass('show_header');
+    //    }
+    //    lastScrollTop = st;
+    // });
 
 
 

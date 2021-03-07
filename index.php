@@ -115,7 +115,7 @@ die;
 
 
 
-<header class="">
+<header class="fixed">
     <div class="container">
         <div class="flex_container flex__space_between flex__align_center">
 
@@ -333,10 +333,10 @@ die;
         <div class="flex_container ">
             <div class="links">
                 <ul>
-                    <li> <a href="#" data-pop='1'> <span> מפרט טכני של חברת Hexis לבדיקות נגד חיידקים </span> </a> </li>
-                    <li> <a href="#" data-pop='2'> <span> בדיקת מעבדה לעמידות מפני וירוסים, כולל וירוס הקורונה  </span> </a> </li>
-                    <li> <a href="#" data-pop='3'> <span> מסמך רשמי של תיאור המוצר ע"י חברת Hexis </span> </a> </li>
-                    <li> <a href="#" data-pop='4'> <span> מפרט מקיף לבדיקות מעבדה לעמידות מפני וירוסים </span> </a> </li>
+                    <li> <a href="assets/aut_PURZON060B_FTP_anglais.pdf"> <span> מפרט טכני של חברת Hexis לבדיקות נגד חיידקים </span> </a> </li>
+                    <li> <a href="assets/Medcal-Test-Results.pdf"> <span> בדיקת מעבדה לעמידות מפני וירוסים, כולל וירוס הקורונה </span> </a> </li>
+                    <li> <a href="assets/Press-Release-HEXIS-PureZone-July2020-EN.pdf"> <span> מסמך רשמי של תיאור המוצר ע"י חברת Hexis </span> </a> </li>
+                    <li> <a href="assets/R2007HEX001-1_ENPurezone.pdf"> <span> מפרט מקיף לבדיקות מעבדה לעמידות מפני וירוסים </span> </a> </li>
                 </ul>
             </div>
         </div>
